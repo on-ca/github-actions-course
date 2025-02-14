@@ -8,5 +8,18 @@ on:
 
   workflow_dispatch:
 
-jobs:
-  build:
+jobs: # need at least one per workflow
+  build-and-release:  # call it whatever we want
+    runs-on: ubuntu-latest # this is the runner
+
+    steps:
+      - uses: actions/checkout@v3 # actual Github project to do check outs.  Can lookup + usage docs
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Run a multi-line script
+        run: | 
+          echo Add other ations to build,
+          echo test, and deploy your projecgt.
+       
